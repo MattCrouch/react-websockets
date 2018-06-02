@@ -23,7 +23,10 @@ class UsernamePrompt extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    this.props.setUsername(this.state.username);
+
+    if (this.state.username !== "") {
+      this.props.setUsername(this.state.username);
+    }
   }
 
   render() {

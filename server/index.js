@@ -14,9 +14,7 @@ const feedback = [];
 
 // Create an object to store feedback from saved data
 const createFeedbackObject = (clientId, type = "happy", content = "") => {
-  const length = 100;
-  const trimmed =
-    content.length > length ? content.substr(0, length) + "..." : content;
+  const trimmed = trim(content, CONSTANTS.MAX_LENGTH);
 
   // Don't allow empty messages
   if (trimmed.length === 0) {
@@ -76,7 +74,7 @@ function onClientMessage(message) {
       break;
     case CONSTANTS.SET_USERNAME:
       // Attach a username to a client ID
-      users[this.id] = data.payload;
+      users[this.id] = trim(data.payload, CONSTANTS.MAX_USERNAME_LENGTH);
       break;
     case CONSTANTS.ADD_VOTE:
       // Register a vote for a piece of feedback
@@ -164,4 +162,8 @@ function ping() {
 function pong() {
   // Mark them as still alive before the next set of pings
   this.isAlive = true;
+}
+
+function trim(str, length) {
+  return str.length > length ? `${str.substr(0, length)}...` : str;
 }
