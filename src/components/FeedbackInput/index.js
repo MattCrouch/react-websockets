@@ -27,11 +27,13 @@ class FeedbackInput extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    this.props.submitFeedback(this.state.feedback);
+    if (this.state.feedback !== "") {
+      this.props.submitFeedback(this.state.feedback);
 
-    this.setState({
-      feedback: ""
-    });
+      this.setState({
+        feedback: ""
+      });
+    }
   }
 
   render() {

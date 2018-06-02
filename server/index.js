@@ -18,6 +18,11 @@ const createFeedbackObject = (clientId, type = "happy", content = "") => {
   const trimmed =
     content.length > length ? content.substr(0, length) + "..." : content;
 
+  // Don't allow empty messages
+  if (trimmed.length === 0) {
+    return false;
+  }
+
   return {
     id: uuid(),
     clientId,
@@ -59,13 +64,15 @@ function onClientMessage(message) {
         data.payload.content
       );
 
-      feedback.push(feedbackObj);
+      if (feedbackObj) {
+        feedback.push(feedbackObj);
 
-      // Tell other clients about the feedback
-      broadcast(CONSTANTS.FEEDBACK_ADDED, {
-        ...feedbackObj,
-        username: users[feedbackObj.clientId]
-      });
+        // Tell other clients about the feedback
+        broadcast(CONSTANTS.FEEDBACK_ADDED, {
+          ...feedbackObj,
+          username: users[feedbackObj.clientId]
+        });
+      }
       break;
     case CONSTANTS.SET_USERNAME:
       // Attach a username to a client ID
