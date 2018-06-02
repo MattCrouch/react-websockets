@@ -164,6 +164,7 @@ function pong() {
   this.isAlive = true;
 }
 
+// Trim strings so they aren't too long
 function trim(str, length) {
   return str.length > length ? `${str.substr(0, length)}...` : str;
 }
