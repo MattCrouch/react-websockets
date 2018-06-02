@@ -1,0 +1,14 @@
+.button {
+  appearance: none;
+  background: inherit;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.25em;
+}
+
+.button:hover,
+.button:focus {
+  background: #e3e3e3;
+}

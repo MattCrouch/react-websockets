@@ -1,0 +1,38 @@
+.username-prompt {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.username-prompt__box {
+  background: white;
+  max-width: 30em;
+  padding: 1em;
+  width: 75%;
+}
+
+.username-prompt__input {
+  border-bottom: 0.2em solid lightgray;
+  display: flex;
+  margin-top: 1em;
+}
+
+.username-prompt__input > input {
+  flex: 1;
+}
+
+.username-prompt__box label {
+  left: -99999px;
+  position: absolute;
+  top: -99999px;
+}
+
+.username-prompt__input > button {
+  flex: 0 0 auto;
+}

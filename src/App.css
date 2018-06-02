@@ -1,0 +1,12 @@
+.app__feedback {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+@media (min-width: 600px) {
+  .app__feedback {
+    flex-direction: row;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,9 @@
+.input-text {
+  appearance: none;
+  background: inherit;
+  border: none;
+  padding: 0.25em;
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+}

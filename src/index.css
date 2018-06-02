@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Bree+Serif");
+
+:root {
+  --color-happy: #fbc531;
+  --color-sad: #e84118;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+  font-family: "Bree Serif", serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
